@@ -11,13 +11,13 @@ import UIKit
 class HomeController: UITableViewController,responseDelegate {
     
     var ListDic :NSDictionary  = NSDictionary()
-    let restaurant:Restaurant = Restaurant()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         RestaurantSearchRequest()
     }
     
+    //MARK: - Actions
     func RestaurantSearchRequest(){
         let timestamp = Int(NSDate().timeIntervalSince1970)
         let RSParam = ["consumer_key":"\(consumer_key)","geo":"121.49576,31.265201", "timestamp": "\(timestamp)"]
@@ -28,8 +28,8 @@ class HomeController: UITableViewController,responseDelegate {
         let Convert = Convert2URL()
         Convert.convertToURL(RestaurantSearchAddress,sourceDic:RSParam)
         
-        //let URL = Convert.URL
-        //RestaurantSearch.GETRequest(URL, delgate: self)
+//      let URL = Convert.URL
+//      RestaurantSearch.GETRequest(URL, delgate: self)
         
         let ServerData = serverStr.dataUsingEncoding(NSUTF8StringEncoding)
         let json:AnyObject?;
@@ -41,8 +41,8 @@ class HomeController: UITableViewController,responseDelegate {
         catch {
             print(error)
         }
-        let restaurant = Restaurant.objecWithKeyValues(ListDic)
         
+        dealResponseData()
     }
     
     //MARK: - GET请求回调
@@ -50,5 +50,17 @@ class HomeController: UITableViewController,responseDelegate {
         let message = response.objectForKey("message") as! String
         let code = response.objectForKey("code") as! Int
         print("message:\(message)\ncode:\(code)")
+    }
+    
+    //处理服务器返回数据
+    func dealResponseData(){
+        let result = BaseResult(dictionary: ListDic)
+        if result.code == 200 {
+            let rtArray = result.data.objectForKey("restaurants") as! NSArray
+            for rtDic in rtArray{
+                let restaurant = Restaurant(dictionary: rtDic as! NSDictionary)
+                print(restaurant)
+            }
+        }
     }
 }
