@@ -41,11 +41,8 @@ class HomeController: UITableViewController,responseDelegate {
         catch {
             print(error)
         }
-        print(ListDic.count)
-        if ListDic.count>0 {
-            
-            
-        }
+        let restaurant = Restaurant.objecWithKeyValues(ListDic)
+        
     }
     
     //MARK: - GET请求回调
