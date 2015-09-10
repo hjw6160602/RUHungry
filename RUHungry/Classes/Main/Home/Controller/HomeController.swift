@@ -10,7 +10,8 @@ import UIKit
 
 class HomeController: UITableViewController,responseDelegate {
     
-    var ListDic :NSDictionary  = NSDictionary()
+    var ListDic       :NSDictionary   = NSDictionary()
+    var RestaurantArr :NSMutableArray = NSMutableArray()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,6 @@ class HomeController: UITableViewController,responseDelegate {
         do  {
             json = try NSJSONSerialization.JSONObjectWithData(ServerData!, options: NSJSONReadingOptions.MutableContainers)
             ListDic = json as! NSDictionary
-            print(ListDic)
         }
         catch {
             print(error)
@@ -54,13 +54,26 @@ class HomeController: UITableViewController,responseDelegate {
     
     //处理服务器返回数据
     func dealResponseData(){
-        let result = BaseResult(dictionary: ListDic)
-        if result.code == 200 {
-            let rtArray = result.data.objectForKey("restaurants") as! NSArray
-            for rtDic in rtArray{
-                let restaurant = Restaurant(dictionary: rtDic as! NSDictionary)
-                print(restaurant)
-            }
+        
+//        let result = BaseResult(dictionary: ListDic)
+//        if result.code == 200 {
+//            let rtArray = result.data.objectForKey("restaurants") as! NSArray
+//            for rtDic in rtArray{
+//                let rtDictionary = rtDic as! NSDictionary
+//                let restaurant = Restaurant(dictionary: rtDictionary)
+//                RestaurantArr.addObject(restaurant)
+//            }
+//        }
+        
+        let bundle = NSBundle.mainBundle() //取得mainBundle
+        for index in 1...3 {
+            let plistPath = bundle.pathForResource("restaurant\(index)", ofType: "plist")
+            let temp_rtDic = NSDictionary(contentsOfFile: plistPath!)
+            let restaurant = Restaurant(dictionary: temp_rtDic!)
+            RestaurantArr.addObject(restaurant)
         }
+        
+        //:@"文件名"ofType:@"plist"]; //取得文件路径
+        
     }
 }

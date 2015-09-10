@@ -10,6 +10,9 @@
 		7830ECA91B9D892500034194 /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830ECA81B9D892500034194 /* DiscoverController.swift */; };
 		7830ECAB1B9D8EE900034194 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830ECAA1B9D8EE900034194 /* TabBarController.swift */; };
 		7830ECAD1B9D970E00034194 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7830ECAC1B9D970E00034194 /* HomeController.swift */; };
+		7892CC1C1BA1540C00002D9E /* restaurant1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7892CC191BA1540C00002D9E /* restaurant1.plist */; };
+		7892CC1D1BA1540C00002D9E /* restaurant2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7892CC1A1BA1540C00002D9E /* restaurant2.plist */; };
+		7892CC1E1BA1540C00002D9E /* restaurant3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7892CC1B1BA1540C00002D9E /* restaurant3.plist */; };
 		78C136EA1B9E8B1E000A2F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C136E91B9E8B1E000A2F1A /* Assets.xcassets */; };
 		78C136EC1B9E8DEC000A2F1A /* RestaurantSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C136EB1B9E8DEC000A2F1A /* RestaurantSearch.swift */; };
 		78C136EE1B9E9281000A2F1A /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C136ED1B9E9281000A2F1A /* Connection.swift */; };
@@ -39,6 +42,9 @@
 		7830ECA81B9D892500034194 /* DiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
 		7830ECAA1B9D8EE900034194 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7830ECAC1B9D970E00034194 /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		7892CC191BA1540C00002D9E /* restaurant1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurant1.plist; sourceTree = "<group>"; };
+		7892CC1A1BA1540C00002D9E /* restaurant2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurant2.plist; sourceTree = "<group>"; };
+		7892CC1B1BA1540C00002D9E /* restaurant3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = restaurant3.plist; sourceTree = "<group>"; };
 		78C136E91B9E8B1E000A2F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C136EB1B9E8DEC000A2F1A /* RestaurantSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantSearch.swift; sourceTree = "<group>"; };
 		78C136ED1B9E9281000A2F1A /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -175,6 +181,16 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7892CC0C1BA14BEB00002D9E /* Restruants */ = {
+			isa = PBXGroup;
+			children = (
+				7892CC191BA1540C00002D9E /* restaurant1.plist */,
+				7892CC1A1BA1540C00002D9E /* restaurant2.plist */,
+				7892CC1B1BA1540C00002D9E /* restaurant3.plist */,
+			);
+			path = Restruants;
 			sourceTree = "<group>";
 		};
 		78C136EF1B9EC797000A2F1A /* Param */ = {
@@ -395,6 +411,7 @@
 		78DAB0FA1B9D63CA00AE4372 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				7892CC0C1BA14BEB00002D9E /* Restruants */,
 				78DAB0FC1B9D63CA00AE4372 /* Libs */,
 				78DAB0FB1B9D63CA00AE4372 /* AppDelegate.swift */,
 			);
@@ -470,6 +487,9 @@
 				78DAB0E41B9D582B00AE4372 /* LaunchScreen.storyboard in Resources */,
 				78C136EA1B9E8B1E000A2F1A /* Assets.xcassets in Resources */,
 				78DAB0DF1B9D582B00AE4372 /* Main.storyboard in Resources */,
+				7892CC1D1BA1540C00002D9E /* restaurant2.plist in Resources */,
+				7892CC1E1BA1540C00002D9E /* restaurant3.plist in Resources */,
+				7892CC1C1BA1540C00002D9E /* restaurant1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
